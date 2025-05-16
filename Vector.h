@@ -52,7 +52,7 @@ private:
 // Allocates memory for _data pointer
 // Initialize _size, _capacity to zero
 Vector::Vector()
-    : _data{new double}, _size{0}, _capacity{0}
+    : _data{nullptr}, _size{0}, _capacity{0}
 {}
 
 // Default fill
@@ -105,8 +105,8 @@ Vector::~Vector() {
 // throws an error if: idx > size() or idx < 0
 // returns a reference to the value stored at idx.
 double& Vector::at(std::size_t idx) {
-    if (idx > _size || idx < 0)
-        throw std::out_of_range("index greater than the size or less than zero is not allowed");
+    if (idx >= _size)
+    throw std::out_of_range("index out of range");
 
     return *(_data + idx);
 }
@@ -142,12 +142,12 @@ std::size_t Vector::capacity() const {
     return _capacity;
 }
 
-bool empty() const {
+bool Vector::empty() const {
     return _size == 0;
 }
 
 // ištrina visus elementus
-void clear() {
+void Vector::clear() {
     _size = 0;  // _capacity remains unchanged, memory remains allocated
 }
 void Vector::reserve(size_t new_cap) {
@@ -175,29 +175,31 @@ void Vector::shrink_to_fit() {
 void Vector::resize(size_t new_size) {
     if (_size == new_size)
         return;
-    else if (_size > new_size)
-        _size = new_size;
-    else {
-        double* temp = new double[new_size];
-        std::copy(_data, _data + _size, temp);
-        delete[] _data;
-        _data = temp;
 
-        for (size_t i = _size; i < new_size; i++)
-        {
-            *(_data + i) = {};  // fill with default value
+    if (new_size < _size) {
+        // If shrinking, only update the size
+        _size = new_size;
+    } else {
+        // If expanding
+        if (new_size > _capacity)
+            reserve(new_size);  // Only allocate new memory if needed
+
+        // Fill new elements with default values
+        for (size_t i = _size; i < new_size; ++i) {
+            _data[i] = {};
         }
 
-        _capacity = _size = new_size;
+        _size = new_size;
     }
 }
 void Vector::push_back(double val) {
     if (_size == _capacity)
-        reserve(2*_size);
+    reserve(_capacity == 0 ? 1 : 2 * _capacity);
 
     *(_data+_size) = val;
     ++_size;
 }
 void Vector::pop_back() {
+    if (_size > 0)
     --_size;
 }
