@@ -18,9 +18,9 @@ public:
 
  // storage
     double* data();
-    std::size_t size();
-    std::size_t capacity(); 
-    bool empty();
+    std::size_t size() const;
+    std::size_t capacity() const; 
+    bool empty() const;
 
  // modifiers
     void clear();
