@@ -53,9 +53,13 @@ public:
     void push_back(value_type);
     void pop_back();
     iterator insert(iterator, const value_type&);
+    template <typename InputIt>
+    iterator insert(iterator, InputIt first, InputIt last); // Add this declaration
     iterator erase(iterator);
     iterator erase(iterator first, iterator last); // Add this declaration
     void assign(size_type, value_type);
+    template <typename InputIt>
+    void assign(InputIt first, InputIt last); // Add this declaration
     void swap(Vector&) noexcept;
 
     iterator begin();
@@ -217,6 +221,22 @@ typename Vector<T>::iterator Vector<T>::insert(iterator pos, const value_type& v
     return _data + index;
 }
 
+// Add this implementation:
+template <typename T>
+template <typename InputIt>
+typename Vector<T>::iterator Vector<T>::insert(iterator pos, InputIt first, InputIt last) {
+    size_type index = pos - _data;
+    size_type count = std::distance(first, last);
+    if (count == 0) return _data + index;
+    if (_size + count > _capacity) reserve(std::max(_capacity * 2, _size + count));
+    // Move existing elements to make space
+    std::move_backward(_data + index, _data + _size, _data + _size + count);
+    // Copy new elements into place
+    std::copy(first, last, _data + index);
+    _size += count;
+    return _data + index;
+}
+
 template <typename T>
 typename Vector<T>::iterator Vector<T>::erase(iterator pos) {
     size_type index = pos - _data;
@@ -245,6 +265,20 @@ void Vector<T>::assign(size_type count, value_type val) {
         _capacity = count;
     }
     std::fill(_data, _data + count, val);
+    _size = count;
+}
+
+// Add this implementation:
+template <typename T>
+template <typename InputIt>
+void Vector<T>::assign(InputIt first, InputIt last) {
+    size_type count = std::distance(first, last);
+    if (count > _capacity) {
+        delete[] _data;
+        _data = new value_type[count];
+        _capacity = count;
+    }
+    std::copy(first, last, _data);
     _size = count;
 }
 

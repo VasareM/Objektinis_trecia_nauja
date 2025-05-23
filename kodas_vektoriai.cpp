@@ -335,10 +335,7 @@ void septintas_meniu(const string& failo_pavadinimas, int nr_failo_dydis, int nr
             // (grupe.begin(), it) - nelaimingi
             nelaimingi.insert(nelaimingi.end(), grupe.begin(), it);
             // Remove elements from begin to it
-            while (grupe.begin() != it) {
-                grupe.erase(grupe.begin());
-                it = grupe.begin(); // update it after erase
-            }
+            grupe.erase(grupe.begin(), it); // <-- FIXED: use the new erase method
         }
         
         auto failo_dalijimo_pabaiga = std::chrono::high_resolution_clock::now();
@@ -481,10 +478,7 @@ void list_veiksmai(const string& failo_pavadinimas, int nr_failo_dydis, int nr_r
             // (grupe.begin(), it) - nelaimingi
             nelaimingi.insert(nelaimingi.end(), grupe.begin(), it);
             // Remove elements from begin to it
-            while (grupe.begin() != it) {
-                grupe.erase(grupe.begin());
-                it = grupe.begin(); // update it after erase
-            }
+            grupe.erase(grupe.begin(), it); // <-- FIXED: use the new erase method
         }        
         auto failo_dalijimo_pabaiga = std::chrono::high_resolution_clock::now();
         auto failo_dalijimo_trukme = std::chrono::duration_cast<std::chrono::seconds>(failo_dalijimo_pabaiga - failo_dalijimo_pradzia);
