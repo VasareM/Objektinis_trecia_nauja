@@ -1,8 +1,9 @@
 #include "antrastes.h"
+#include "Vector_new.h"
 
 #include <iostream>
 #include <iomanip>
-#include <vector>
+#include <Vector>
 #include <string>
 #include <algorithm> // kad veiktu sort
 #include <ctime> //rand
@@ -15,11 +16,10 @@
 #include <numeric> //accumulate
 #include <iterator> //istream_iterator
 
-using std::vector;
 
 using std::cin;
 using std::cout;
-using std::vector;
+
 using std::string;
 using std::endl;
 using std::setw;
@@ -28,7 +28,7 @@ using std::ofstream;
 using std::sort;
 
 
-void nuskaitymas(const string& failo_pavadinimas, vector<studentai>& grupe, int &n) 
+void nuskaitymas(const string& failo_pavadinimas, Vector<studentai>& grupe, int &n) 
 {
     std::ios::sync_with_stdio(false); // Optimize input speed
     ifstream in;
@@ -53,7 +53,7 @@ void nuskaitymas(const string& failo_pavadinimas, vector<studentai>& grupe, int 
         std::istringstream iss(eilute);
         studentai temp;
         temp.readStudent(iss);
-        grupe.push_back(std::move(temp)); // to optimize vector insertion
+        grupe.push_back(std::move(temp)); // to optimize Vector insertion
     }
     in.close();
 }
@@ -121,17 +121,17 @@ void failo_generavimas(string failo_pavadinimas, int nr_failo_dydis, int paz_kie
 
 string vardo_generavimas()
 {
-    vector <string> vardu_sar={"Petras", "Jonas", "Aloyzas", "Kastytis", "Gintaras", "Tomas", "Augustas", "Dovydas", "Markas"};
+    Vector <string> vardu_sar={"Petras", "Jonas", "Aloyzas", "Kastytis", "Gintaras", "Tomas", "Augustas", "Dovydas", "Markas"};
     int vardo_nr=rand()%vardu_sar.size();
     return vardu_sar[vardo_nr];
 }
 string pavardes_generavimas()
 {
-    vector <string> pavardu_sar={"Petraitis", "Jonaitis", "Sabonis", "Zukauskas", "Stankevicius", "Maciulis", "Kudirka", "Basanavicius", "Marcinkevicius"};
+    Vector <string> pavardu_sar={"Petraitis", "Jonaitis", "Sabonis", "Zukauskas", "Stankevicius", "Maciulis", "Kudirka", "Basanavicius", "Marcinkevicius"};
     int pavardo_nr=rand()%pavardu_sar.size();
     return pavardu_sar[pavardo_nr];
 }
-void spausdinimas(vector <studentai> grupe)
+void spausdinimas(Vector <studentai> grupe)
 {
     cout << std::left << setw(25) << "Pavarde" << setw(20) << "Vardas" << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)" << endl;
     cout << string(85, '-') << endl;
@@ -143,7 +143,7 @@ void spausdinimas(vector <studentai> grupe)
         //cout << endl;
     }
 }
-void spausdinimas_faile(vector<studentai> grupe, const string& outputo_pavadinimas)
+void spausdinimas_faile(Vector<studentai> grupe, const string& outputo_pavadinimas)
 {
     ofstream out (outputo_pavadinimas);
     out << std::left << setw(25) << "Pavarde" << setw(20) << "Vardas" << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)" << endl;
@@ -155,7 +155,7 @@ void spausdinimas_faile(vector<studentai> grupe, const string& outputo_pavadinim
     }
 }
 
-void rikiavimas(int nr_rikiavimas, vector <studentai> &grupe)
+void rikiavimas(int nr_rikiavimas, Vector <studentai> &grupe)
 {
     if (nr_rikiavimas==1) sort(grupe.begin(),grupe.end(), [](studentai a, studentai b) {return a.vardas()<b.vardas();});
     else if (nr_rikiavimas==2) sort(grupe.begin(),grupe.end(), [](studentai a, studentai b) {return a.pavarde()<b.pavarde();});
@@ -167,7 +167,7 @@ void rikiavimas(int nr_rikiavimas, vector <studentai> &grupe)
         return;
     }
 }
-void spausdinimo_parinkimas(std::vector<studentai> grupe, int nr_spausdinimas, int nr_rikiavimas)
+void spausdinimo_parinkimas(Vector<studentai> grupe, int nr_spausdinimas, int nr_rikiavimas)
 {
     if (!grupe.empty())
     {
@@ -180,13 +180,13 @@ void spausdinimo_parinkimas(std::vector<studentai> grupe, int nr_spausdinimas, i
 }
 
 /*
-int sumos_skaiciavimas(vector <int> &pazymiai, studentai &temp)
+int sumos_skaiciavimas(Vector <int> &pazymiai, studentai &temp)
 {
     int suma=0;
     suma=std::accumulate(temp.pazymiai.begin(), temp.pazymiai.end(), 0);
     return suma;
 }
-int mediana_skaiciavimas(vector <int> &pazymiai, studentai &temp)
+int mediana_skaiciavimas(Vector <int> &pazymiai, studentai &temp)
 {
     int n=temp.pazymiai.size(), med=0;
     std::sort(temp.pazymiai.begin(), temp.pazymiai.end());
@@ -201,7 +201,7 @@ int mediana_skaiciavimas(vector <int> &pazymiai, studentai &temp)
     temp.mediana = med;
     return med;
 }
-double vidurkio_skaiciavimas(vector <int> &pazymiai, studentai &temp)
+double vidurkio_skaiciavimas(Vector <int> &pazymiai, studentai &temp)
 {
     double vidurkis=0;
     vidurkis=sumos_skaiciavimas(pazymiai, temp)/(double)temp.pazymiai.size();

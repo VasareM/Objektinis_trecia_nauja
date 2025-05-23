@@ -1,11 +1,13 @@
 #include "antrastes.h"
 #include "strukt_antr.h"
+#include "Vector_new.h"
+
 
 #include <exception>
 #include <limits>
 
 #include <iostream>
-#include <vector>
+#include <Vector>
 #include <string>
 #include <sstream>
 #include <fstream>
@@ -21,7 +23,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
-using std::vector;
+
 using std::string;
 using std::setw;
 using std::ifstream;
@@ -172,7 +174,7 @@ double studentai::gal_vid() const{
 }
 int studentai::mediana() const {
     if (pazymiai_.empty()) return 0;
-    vector<double> temp = pazymiai_;
+    Vector<double> temp = pazymiai_;
     std::sort(temp.begin(), temp.end());
     size_t size = temp.size();
     if (size%2==0)
@@ -201,7 +203,13 @@ std::istream& studentai::readStudent(std::istream& is)
     pazymiai_.clear(); 
     is >> vardas_ >> pavarde_;
 
-    pazymiai_.assign(std::istream_iterator<int>(is), std::istream_iterator<int>());
+    double paz;
+    while (is >> paz) {
+        pazymiai_.push_back(paz);
+    }
+    // If stream failed but not at end, clear error for further use
+    if (!is.eof()) is.clear();
+
     if (!pazymiai_.empty()) 
     {
         egzam_=pazymiai_.back();
@@ -211,7 +219,6 @@ std::istream& studentai::readStudent(std::istream& is)
     {
         egzam_=0;
     }
-    
     //skaičiavimai:
     vidurkis_ = vidurkis();
     mediana_ = mediana();
@@ -221,10 +228,10 @@ std::istream& studentai::readStudent(std::istream& is)
     return is;
 }
 /*
-double mediana_skaiciavimas(const vector<double>& pazymiai_) 
+double mediana_skaiciavimas(const Vector<double>& pazymiai_) 
 {
     if (pazymiai_.empty()) return 0;
-    vector<double> temp = pazymiai_;
+    Vector<double> temp = pazymiai_;
     std::sort(temp.begin(), temp.end());
     size_t size=temp.size();
     if (size%2==0)
@@ -236,7 +243,7 @@ double mediana_skaiciavimas(const vector<double>& pazymiai_)
         return temp[size/2];
     }
 }
-double vidurkis_skaiciavimas(const vector<double>& pazymiai_)
+double vidurkis_skaiciavimas(const Vector<double>& pazymiai_)
 {
     if (pazymiai_.empty()) return 0;
     double suma=0;
@@ -247,7 +254,7 @@ double vidurkis_skaiciavimas(const vector<double>& pazymiai_)
     return suma/pazymiai_.size();
 }
 */
-void skaiciavimas(vector <studentai>& grupe, int n)
+void skaiciavimas(Vector <studentai>& grupe, int n)
 {
     for (auto& m:grupe)
     {
@@ -271,7 +278,7 @@ bool comparePagalMed(const studentai& a, const studentai& b) {
 
 void septintas_meniu(const string& failo_pavadinimas, int nr_failo_dydis, int nr_rikiavimas, int& n, int strategijos_nr)
 {
-    vector <studentai> grupe;
+    Vector <studentai> grupe;
     auto failo_nuskaitymo_pradzia=std::chrono::high_resolution_clock::now();
     nuskaitymas(failo_pavadinimas, grupe, n);
     auto failo_nuskaitymo_pabaiga = std::chrono::high_resolution_clock::now();
@@ -279,7 +286,7 @@ void septintas_meniu(const string& failo_pavadinimas, int nr_failo_dydis, int nr
     cout << "Failo iš " << nr_failo_dydis << " įrašų nuskaitymo laikas: " << std::fixed << std::setprecision(5) << failo_nuskaitymo_trukme.count() << "s" << endl;
     ///
     skaiciavimas(grupe, n);
-    vector <studentai> galvociai, nelaimingi;
+    Vector <studentai> galvociai, nelaimingi;
     if (strategijos_nr==3)
     {
         auto failo3_sort_pradzia=std::chrono::high_resolution_clock::now();
@@ -327,7 +334,11 @@ void septintas_meniu(const string& failo_pavadinimas, int nr_failo_dydis, int nr
 
             // (grupe.begin(), it) - nelaimingi
             nelaimingi.insert(nelaimingi.end(), grupe.begin(), it);
-            grupe.erase(grupe.begin(), it);
+            // Remove elements from begin to it
+            while (grupe.begin() != it) {
+                grupe.erase(grupe.begin());
+                it = grupe.begin(); // update it after erase
+            }
         }
         
         auto failo_dalijimo_pabaiga = std::chrono::high_resolution_clock::now();
@@ -371,7 +382,7 @@ void nuskaitymas_list(const string& failo_pavadinimas, list <studentai>& grupe, 
         std::istringstream iss(eilute);
         studentai temp;
         temp.readStudent(iss);
-        grupe.push_back(std::move(temp)); // to optimize vector insertion
+        grupe.push_back(std::move(temp)); // to optimize Vector insertion
     }
     in.close();
 }
@@ -466,8 +477,14 @@ void list_veiksmai(const string& failo_pavadinimas, int nr_failo_dydis, int nr_r
             {
                 ++it;
             }
+
+            // (grupe.begin(), it) - nelaimingi
             nelaimingi.insert(nelaimingi.end(), grupe.begin(), it);
-            grupe.erase(grupe.begin(), it);
+            // Remove elements from begin to it
+            while (grupe.begin() != it) {
+                grupe.erase(grupe.begin());
+                it = grupe.begin(); // update it after erase
+            }
         }        
         auto failo_dalijimo_pabaiga = std::chrono::high_resolution_clock::now();
         auto failo_dalijimo_trukme = std::chrono::duration_cast<std::chrono::seconds>(failo_dalijimo_pabaiga - failo_dalijimo_pradzia);
@@ -509,7 +526,7 @@ void nuskaitymas_deque(const string& failo_pavadinimas, deque <studentai>& grupe
         std::istringstream iss(eilute);
         studentai temp;
         temp.readStudent(iss);
-        grupe.push_back(std::move(temp)); // to optimize vector insertion
+        grupe.push_back(std::move(temp)); // to optimize Vector insertion
     }
     in.close();
 }
@@ -624,7 +641,7 @@ int main()
         cout << "Meniu (įveskite pasirinktos programos eigos nr.):" << endl;
         cout << "1 - ranka įveskite duomenis, 2 - generuoti pažymius, 3 - generuoti pažymius ir studentų vardus, 4 - baigti darbą;" << endl;
         cout << "5 - nuskaityti duomenis iš failo, 6 - failų generatorius;" << endl;
-        cout <<  "7 - testavimas su vector \n8 - testavimas su list \n9 - testavimas su deque" << endl;
+        cout <<  "7 - testavimas su Vector \n8 - testavimas su list \n9 - testavimas su deque" << endl;
         cout << "10 - testavimas su visais konteineriais" << endl;
         cout << "11 - testavimas su rule of five ir i/o operatoriais" << endl;
         string vardas, pavarde;
@@ -697,7 +714,7 @@ int main()
             }
             if (nr_meniu==10)
             {
-                cout << "vector" << endl;
+                cout << "Vector" << endl;
                 for (int i=0; i<kiek_failu; i++)
                 {
                     nr_failo_dydis=failu_dydziai[i];
@@ -846,7 +863,7 @@ int main()
         vartotojo_pasirinkimas(nr_spausdinimas, 1, 2);
         int m=0, n=0; //m-studentai, n-nd
         int paz, egz;
-        vector <studentai> grupe;     //grupes studentu pazymiai
+        Vector <studentai> grupe;     //grupes studentu pazymiai
         if (nr_meniu==5)
         {
             cout << "Išsirinkite darbinį failą: \n 1 - kursiokai.txt, 2 - studentai10000.txt, 3 - studentai100000.txt, 4 - studentai1000000.txt" << endl;

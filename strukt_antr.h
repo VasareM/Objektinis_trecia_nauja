@@ -1,11 +1,12 @@
 #ifndef strukt_antr_h
 #define strukt_antr_h
 
+#include "Vector_new.h"
 #include <iostream>
-#include <vector>
+//#include <vector>
 #include <string>
 
-using std::vector;
+//using std::vector;
 using std::string;
 
 class Zmogus
@@ -44,7 +45,7 @@ class studentai: public Zmogus
 {
     private:
         double egzam_;
-        vector <double> pazymiai_;
+        Vector <double> pazymiai_;
         double suma_=0;
         double vidurkis_=0;
         int mediana_=0;
@@ -81,7 +82,7 @@ class studentai: public Zmogus
         //string vardas() const {return vardas_;}
         //string pavarde() const {return pavarde_;}
         double egzam() const { return egzam_; }
-        const vector<double>& pazymiai() const { return pazymiai_; }
+        const Vector<double>& pazymiai() const { return pazymiai_; }
         double suma() const {return suma_;}
         double vidurkis() const;
         int mediana() const;
@@ -91,7 +92,7 @@ class studentai: public Zmogus
         std::istream& readStudent(std::istream&);
         //set'eriai
         void setEgzam(double egzam) {egzam_ = egzam;}
-        void setPazymiai(const vector<double>& pazymiai) {pazymiai_ = pazymiai;}
+        void setPazymiai(const Vector<double>& pazymiai) {pazymiai_ = pazymiai;}
         
         void setSuma(double suma) {suma_ = suma;}
         void setVidurkis(double vidurkis) {vidurkis_ = vidurkis;}
@@ -126,7 +127,7 @@ class studentai
         string vardas_;
         string pavarde_;
         double egzam_;
-        vector <double> pazymiai_;
+        Vector <double> pazymiai_;
         double suma_=0;
         double vidurkis_=0;
         int mediana_=0;
@@ -148,7 +149,7 @@ class studentai
         inline string vardas() const {return vardas_;}
         inline string pavarde() const {return pavarde_;}
         inline double egzam() const { return egzam_; }
-        inline const vector<double>& pazymiai() const { return pazymiai_; }
+        inline const Vector<double>& pazymiai() const { return pazymiai_; }
         inline double suma() const {return suma_;}
         inline double vidurkis() const;
         inline int mediana() const;
@@ -160,7 +161,7 @@ class studentai
         void setVardas(string vardas) {vardas_ = vardas;}
         void setPavarde(string pavarde) {pavarde_ = pavarde;}
         void setEgzam(double egzam) {egzam_ = egzam;}
-        void setPazymiai(const vector<double>& pazymiai) {pazymiai_ = pazymiai;}
+        void setPazymiai(const Vector<double>& pazymiai) {pazymiai_ = pazymiai;}
         
         void setSuma(double suma) {suma_ = suma;}
         void setVidurkis(double vidurkis) {vidurkis_ = vidurkis;}
@@ -199,7 +200,7 @@ struct studentai
 {
     string vardas="var"; //default reiksmes testavimui
     string pavarde="pav";
-    vector<int> pazymiai; //nd tarpiniai rezultatai
+    Vector<int> pazymiai; //nd tarpiniai rezultatai
     int egzam;
     double suma=0;
     double vidurkis;
