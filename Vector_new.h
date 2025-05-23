@@ -54,6 +54,7 @@ public:
     void pop_back();
     iterator insert(iterator, const value_type&);
     iterator erase(iterator);
+    iterator erase(iterator first, iterator last); // Add this declaration
     void assign(size_type, value_type);
     void swap(Vector&) noexcept;
 
@@ -222,6 +223,18 @@ typename Vector<T>::iterator Vector<T>::erase(iterator pos) {
     std::move(_data + index + 1, _data + _size, _data + index);
     --_size;
     return _data + index;
+}
+
+// Add this implementation:
+template <typename T>
+typename Vector<T>::iterator Vector<T>::erase(iterator first, iterator last) {
+    if (first == last) return first;
+    size_type index_first = first - _data;
+    size_type index_last = last - _data;
+    size_type count = index_last - index_first;
+    std::move(_data + index_last, _data + _size, _data + index_first);
+    _size -= count;
+    return _data + index_first;
 }
 
 template <typename T>
