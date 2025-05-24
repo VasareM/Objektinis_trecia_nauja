@@ -41,3 +41,72 @@ TEST_CASE("AA")
     REQUIRE(v2[1] == 2);
     REQUIRE(v2[2] == 3);
 }
+/*
+v5 = v3;
+    REQUIRE(v5.size() == 3);
+    REQUIRE(v5[2] == 7);
+
+*/
+
+/*
+at
+operator[]
+front
+back
+size
+capacity
+empty
+max_size
+reserve
+shrink_to_fit
+*/
+TEST_CASE("push_back, pop_back, clear test")
+{
+    Vector<int> v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    REQUIRE(v.size() == 3);
+    REQUIRE(v.back() == 3);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 3);
+
+    v.pop_back();
+    REQUIRE(v.size() == 2);
+    REQUIRE(v.back() == 2);
+
+    v.clear();
+    REQUIRE(v.size() == 0);
+    REQUIRE(v.empty());
+
+
+}
+
+// resize
+// resize
+
+/*
+insert
+insert
+erase
+erase
+assign
+assign
+swap
+begin
+begin
+cbegin
+end
+end
+cend
+rbegin
+rbegin
+rbegin
+rend
+rend
+rend
+get_allocator
+data
+
+*/
