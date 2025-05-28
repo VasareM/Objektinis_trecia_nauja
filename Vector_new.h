@@ -53,13 +53,15 @@ public:
     void push_back(value_type);
     void pop_back();
     iterator insert(iterator, const value_type&);
-    template <typename InputIt>
+    template <typename InputIt,
+              typename = typename std::enable_if<!std::is_integral<InputIt>::value>::type>
     iterator insert(iterator, InputIt first, InputIt last); // Add this declaration
     iterator erase(iterator);
     iterator erase(iterator first, iterator last); // Add this declaration
     void assign(size_type, value_type);
-    template <typename InputIt>
-    void assign(InputIt first, InputIt last); // Add this declaration
+    template <typename InputIt,
+              typename = typename std::enable_if<!std::is_integral<InputIt>::value>::type>
+    void assign(InputIt first, InputIt last); // SFINAE: only enable for non-integral InputIt
     void swap(Vector&) noexcept;
 
     iterator begin();
@@ -223,7 +225,7 @@ typename Vector<T>::iterator Vector<T>::insert(iterator pos, const value_type& v
 
 // Add this implementation:
 template <typename T>
-template <typename InputIt>
+template <typename InputIt, typename>
 typename Vector<T>::iterator Vector<T>::insert(iterator pos, InputIt first, InputIt last) {
     size_type index = pos - _data;
     size_type count = std::distance(first, last);
@@ -270,7 +272,7 @@ void Vector<T>::assign(size_type count, value_type val) {
 
 // Add this implementation:
 template <typename T>
-template <typename InputIt>
+template <typename InputIt, typename>
 void Vector<T>::assign(InputIt first, InputIt last) {
     size_type count = std::distance(first, last);
     if (count > _capacity) {

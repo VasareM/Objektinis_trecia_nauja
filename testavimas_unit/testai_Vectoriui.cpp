@@ -188,6 +188,23 @@ TEST_CASE("erase() testai")
     v.erase(v.begin(), v.end());
     REQUIRE(v.size() == 0);
 }
+TEST_CASE("assign() testai")
+{
+    Vector<int> v{1, 2, 3, 4, 5};
+    v.assign(7, 10);
+    REQUIRE(v.size() == 7);
+    for (int i=0; i<7; ++i)
+    {
+        REQUIRE(v[i] == 10);
+    }
+
+    Vector<int> v1{1, 2, 3, 4, 5};
+    int sarasas[]={7, 8, 9};
+    v1.assign(sarasas+1, sarasas+3);
+    REQUIRE(v1.size() == 2);
+    REQUIRE(v1[0] == 8);
+    REQUIRE(v1[1] == 9);
+}
 /*
 TEST_CASE("")
 {
