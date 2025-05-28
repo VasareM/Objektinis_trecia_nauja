@@ -88,6 +88,13 @@ TEST_CASE("size(), capacity(), reserve(), shrink_to_fit() testas")
     v.shrink_to_fit();
     REQUIRE(v.capacity() == v.size()); // after shrink_to_fit, capacity == size
 }
+TEST_CASE("max_size() test")
+{
+    Vector<int> v{1, 2, 3};
+    REQUIRE(v.max_size() > 1000000);
+    REQUIRE(v.max_size() >= v.size());
+    //max_size - ne mažesnis už size(), didesnis už labai didelį skaičių
+}
 /*
 max_size
 
