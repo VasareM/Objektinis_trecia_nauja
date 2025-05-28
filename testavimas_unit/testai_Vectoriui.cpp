@@ -221,6 +221,36 @@ TEST_CASE("swap() testas")
     REQUIRE(v2[1] == 2);
     REQUIRE(v2[2] == 3);
 }
+TEST_CASE("begin ir end, ir c, ir r testai")
+{
+    Vector<int> v{1, 2, 3};
+
+    // Test begin/end (forward iteration)
+    int expected[] = {1, 2, 3};
+    int i = 0;
+    for (auto it = v.begin(); it != v.end(); ++it, ++i)
+        REQUIRE(*it == expected[i]);
+    REQUIRE(i == 3);
+
+    // Test cbegin/cend (const forward iteration)
+    i = 0;
+    for (auto it = v.cbegin(); it != v.cend(); ++it, ++i)
+        REQUIRE(*it == expected[i]);
+    REQUIRE(i == 3);
+
+    // Test rbegin/rend (reverse iteration)
+    int expected_rev[] = {3, 2, 1};
+    i = 0;
+    for (auto it = v.rbegin(); it != v.rend(); ++it, ++i)
+        REQUIRE(*it == expected_rev[i]);
+    REQUIRE(i == 3);
+
+    // Test crbegin/crend (const reverse iteration)
+    i = 0;
+    for (auto it = v.crbegin(); it != v.crend(); ++it, ++i)
+        REQUIRE(*it == expected_rev[i]);
+    REQUIRE(i == 3);
+}
 /*
 TEST_CASE("")
 {
@@ -229,7 +259,6 @@ TEST_CASE("")
     REQUIRE();
 }
 
-swap
 begin
 begin
 cbegin
@@ -242,6 +271,7 @@ rbegin
 rend
 rend
 rend
+
 get_allocator
 data
 
