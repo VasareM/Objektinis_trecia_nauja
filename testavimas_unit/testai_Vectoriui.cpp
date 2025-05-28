@@ -67,24 +67,30 @@ TEST_CASE("operator[] testas, priskyrimas ir taisymas")
 TEST_CASE("front(), back() testas")
 {
     Vector<int> v{1, 2, 3};
-    REQUIRE(v[0] == 1);
-    REQUIRE(v[1] == 2);
-    REQUIRE(v[2] == 3);
 
     REQUIRE(v.front() == 1);
     REQUIRE(v.back() == 3);
 }
+TEST_CASE("size(), capacity(), reserve(), shrink_to_fit() testas")
+{
+    Vector<int> v{1, 2, 3};
+    REQUIRE(v.size() == 3);
+
+    REQUIRE(v.capacity() >= 3); // capacity should be at least 3
+
+    v.reserve(10);
+    REQUIRE(v.capacity() >= 10); // after reserve, capacity should be at least 10
+
+    v.push_back(4);
+    REQUIRE(v.size() == 4);
+    REQUIRE(v.capacity() >= 10); // capacity should not decrease after push_back
+
+    v.shrink_to_fit();
+    REQUIRE(v.capacity() == v.size()); // after shrink_to_fit, capacity == size
+}
 /*
-at
-operator[]
-front
-back
-size
-capacity
-empty
 max_size
-reserve
-shrink_to_fit
+
 */
 TEST_CASE("push_back, pop_back, clear test")
 {
