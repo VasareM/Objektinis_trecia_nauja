@@ -47,7 +47,12 @@ v5 = v3;
     REQUIRE(v5[2] == 7);
 
 */
-
+TEST_CASE("Testas at()")
+{
+    Vector<int> v{1, 2, 3};
+    REQUIRE_NOTHROW(v.at(2));
+    REQUIRE_THROWS_AS(v.at(3), std::out_of_range);
+}
 /*
 at
 operator[]
@@ -79,8 +84,6 @@ TEST_CASE("push_back, pop_back, clear test")
     v.clear();
     REQUIRE(v.size() == 0);
     REQUIRE(v.empty());
-
-
 }
 
 // resize
