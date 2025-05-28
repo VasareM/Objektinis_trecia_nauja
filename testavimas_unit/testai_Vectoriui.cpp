@@ -95,10 +95,6 @@ TEST_CASE("max_size() test")
     REQUIRE(v.max_size() >= v.size());
     //max_size - ne mažesnis už size(), didesnis už labai didelį skaičių
 }
-/*
-max_size
-
-*/
 TEST_CASE("push_back, pop_back, clear test")
 {
     Vector<int> v;
@@ -119,11 +115,40 @@ TEST_CASE("push_back, pop_back, clear test")
     REQUIRE(v.size() == 0);
     REQUIRE(v.empty());
 }
-
-// resize
-// resize
+TEST_CASE("resize() testai")
+{
+    Vector<int> v{1, 2, 3};
+    // padidinama rankiniu būdu:
+    v.resize(5);
+    REQUIRE(v.size() == 5);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 3);
+    REQUIRE(v[3] == 0);
+    REQUIRE(v[4] == 0);
+    //sumažinama iki skč:
+    v.resize(3);
+    REQUIRE(v.size() == 3);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 3);
+    //padidinama iki skaičiaus, visi papildomi antro skč
+    v.resize(5, 10);
+    REQUIRE(v.size() == 5);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 3);
+    REQUIRE(v[3] == 10);
+    REQUIRE(v[4] == 10);
+}
 
 /*
+TEST_CASE("")
+{
+    Vector<int> v{1, 2, 3};
+
+    REQUIRE();
+}
 insert
 insert
 erase
