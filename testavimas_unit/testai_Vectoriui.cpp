@@ -53,6 +53,17 @@ TEST_CASE("Testas at()")
     REQUIRE_NOTHROW(v.at(2));
     REQUIRE_THROWS_AS(v.at(3), std::out_of_range);
 }
+TEST_CASE("operator[] testas, priskyrimas ir taisymas")
+{
+    Vector<int> v{1, 2, 3};
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 3);
+
+    v[1]=250;
+    REQUIRE(v[1] == 250);
+    // operatorius ir dirba su indeksais
+}
 /*
 at
 operator[]
