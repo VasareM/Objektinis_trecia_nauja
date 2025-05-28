@@ -141,7 +141,35 @@ TEST_CASE("resize() testai")
     REQUIRE(v[3] == 10);
     REQUIRE(v[4] == 10);
 }
+TEST_CASE("insert() tests")
+{
+    Vector<int> v{1, 2, 3};
+    v.insert(v.begin(), 0);
+    REQUIRE(v.size() == 4);
+    REQUIRE(v[0] == 0);
+    REQUIRE(v[1] == 1);
 
+    v.insert(v.begin()+2, 40);
+    REQUIRE(v.size() == 5);
+    REQUIRE(v[2] == 40);
+
+    v.insert(v.end(), 50);
+    REQUIRE(v.size() == 6);
+    REQUIRE(v[5] == 50);
+
+    int sarasas[] = {16, 17, 18};
+    v.insert(v.begin()+3, sarasas, sarasas+3);
+    REQUIRE(v.size() == 9);
+    REQUIRE(v[0] == 0);
+    REQUIRE(v[1] == 1);
+    REQUIRE(v[2] == 40);
+    REQUIRE(v[3] == 16);
+    REQUIRE(v[4] == 17);
+    REQUIRE(v[5] == 18);
+    REQUIRE(v[6] == 2);
+    REQUIRE(v[7] == 3);
+    REQUIRE(v[8] == 50);
+}
 /*
 TEST_CASE("")
 {
@@ -149,8 +177,7 @@ TEST_CASE("")
 
     REQUIRE();
 }
-insert
-insert
+
 erase
 erase
 assign
