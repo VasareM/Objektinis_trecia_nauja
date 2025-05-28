@@ -170,6 +170,24 @@ TEST_CASE("insert() tests")
     REQUIRE(v[7] == 3);
     REQUIRE(v[8] == 50);
 }
+TEST_CASE("erase() testai")
+{
+    Vector<int> v{1, 2, 3, 4, 5};
+    v.erase(v.begin() + 2);
+    REQUIRE(v.size() == 4);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 4);
+    REQUIRE(v[3] == 5);
+
+    v.erase(v.begin() + 1, v.begin() + 3); // išima [1] ir [2]
+    REQUIRE(v.size() == 2);
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 5);
+
+    v.erase(v.begin(), v.end());
+    REQUIRE(v.size() == 0);
+}
 /*
 TEST_CASE("")
 {
@@ -177,9 +195,6 @@ TEST_CASE("")
 
     REQUIRE();
 }
-
-erase
-erase
 assign
 assign
 swap
