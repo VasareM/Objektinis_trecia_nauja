@@ -64,6 +64,16 @@ TEST_CASE("operator[] testas, priskyrimas ir taisymas")
     REQUIRE(v[1] == 250);
     // operatorius ir dirba su indeksais
 }
+TEST_CASE("front(), back() testas")
+{
+    Vector<int> v{1, 2, 3};
+    REQUIRE(v[0] == 1);
+    REQUIRE(v[1] == 2);
+    REQUIRE(v[2] == 3);
+
+    REQUIRE(v.front() == 1);
+    REQUIRE(v.back() == 3);
+}
 /*
 at
 operator[]
