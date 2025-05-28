@@ -205,6 +205,22 @@ TEST_CASE("assign() testai")
     REQUIRE(v1[0] == 8);
     REQUIRE(v1[1] == 9);
 }
+TEST_CASE("swap() testas")
+{
+    Vector<int> v1{1, 2, 3};
+    Vector<int> v2{4, 5};
+    
+    v1.swap(v2);
+
+    REQUIRE(v1.size() == 2);
+    REQUIRE(v1[0] == 4);
+    REQUIRE(v1[1] == 5);
+
+    REQUIRE(v2.size() == 3);
+    REQUIRE(v2[0] == 1);
+    REQUIRE(v2[1] == 2);
+    REQUIRE(v2[2] == 3);
+}
 /*
 TEST_CASE("")
 {
@@ -212,8 +228,7 @@ TEST_CASE("")
 
     REQUIRE();
 }
-assign
-assign
+
 swap
 begin
 begin
