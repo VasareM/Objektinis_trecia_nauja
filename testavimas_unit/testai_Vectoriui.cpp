@@ -251,6 +251,23 @@ TEST_CASE("begin ir end, ir c, ir r testai")
         REQUIRE(*it == expected_rev[i]);
     REQUIRE(i == 3);
 }
+TEST_CASE("data() testas")
+{
+    Vector<int> v{5, 6, 7};
+    REQUIRE(v.data() == &v[0]);      // data() points to first element
+    *v.data() = 42;
+    REQUIRE(v[0] == 42);             // modifying through data() works
+}
+TEST_CASE("get_allocator() testas")
+{
+    Vector<int> v;
+    auto alloc = v.get_allocator();
+    int* p = alloc.allocate(1);
+    alloc.construct(p, 123);
+    REQUIRE(*p == 123);
+    alloc.destroy(p);
+    alloc.deallocate(p, 1);
+}
 /*
 TEST_CASE("")
 {
@@ -258,21 +275,4 @@ TEST_CASE("")
 
     REQUIRE();
 }
-
-begin
-begin
-cbegin
-end
-end
-cend
-rbegin
-rbegin
-rbegin
-rend
-rend
-rend
-
-get_allocator
-data
-
 */
