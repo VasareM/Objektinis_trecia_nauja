@@ -19,9 +19,12 @@
 | 1000000     | 63.00443          | 69.96432             | 
 | 10000000    |  713.36633    |       897.70489
 
-## v2.0: dokumentacija ir Unit testavimas
+## dokumentacija ir Unit testavimas
 
 ## Paleidimas
+
+### Setup
+
 
 ### Instrukcija
 programą galima paleisti įvairiais būdais
