@@ -14,7 +14,7 @@ TEST_CASE("Konstruktorių testai")
     Vector<int> v2(5);
     REQUIRE(v2.size() == 5);
     for (int i = 0; i < 5; ++i) REQUIRE(v2[i] == 0);
-////////// i6siai6kint k1 rei6kia
+////////// rei6kia
 
     // Konstruktorius su size_type ir value_type
     Vector<int> v3(5, 2);
@@ -27,11 +27,11 @@ TEST_CASE("Konstruktorių testai")
     REQUIRE(v4[0] == 1);
     REQUIRE(v4[1] == 2);
     REQUIRE(v4[2] == 3);
-//////// tsg wtf?
+//////// tsgw?
 
     // Destructor is implicitly tested (no crash, no leak)
 }
-TEST_CASE("AA")
+TEST_CASE("Copy konstruktoriaus testas")
 {
     Vector<int> v1{1, 2, 3};
     // Copy konstruktorius
@@ -41,12 +41,6 @@ TEST_CASE("AA")
     REQUIRE(v2[1] == 2);
     REQUIRE(v2[2] == 3);
 }
-/*
-v5 = v3;
-    REQUIRE(v5.size() == 3);
-    REQUIRE(v5[2] == 7);
-
-*/
 TEST_CASE("Testas at()")
 {
     Vector<int> v{1, 2, 3};
@@ -76,17 +70,17 @@ TEST_CASE("size(), capacity(), reserve(), shrink_to_fit() testas")
     Vector<int> v{1, 2, 3};
     REQUIRE(v.size() == 3);
 
-    REQUIRE(v.capacity() >= 3); // capacity should be at least 3
+    REQUIRE(v.capacity() >= 3);
 
     v.reserve(10);
-    REQUIRE(v.capacity() >= 10); // after reserve, capacity should be at least 10
-
+    REQUIRE(v.capacity() >= 10);
+    
     v.push_back(4);
     REQUIRE(v.size() == 4);
-    REQUIRE(v.capacity() >= 10); // capacity should not decrease after push_back
+    REQUIRE(v.capacity() >= 10); // capacity nesumazeja po push_back
 
     v.shrink_to_fit();
-    REQUIRE(v.capacity() == v.size()); // after shrink_to_fit, capacity == size
+    REQUIRE(v.capacity() == v.size()); // po shrink_to_fit, capacity = size
 }
 TEST_CASE("max_size() test")
 {
