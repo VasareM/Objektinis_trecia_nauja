@@ -1,4 +1,5 @@
-#include "antrastes.h"
+//#include "antrastes.h"
+//#include "antrastes_spartai.h"
 #include "strukt_antr.h"
 #include "Vector_new.h"
 

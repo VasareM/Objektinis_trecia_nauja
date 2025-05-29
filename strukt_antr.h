@@ -15,7 +15,8 @@ class Zmogus
         string vardas_;
         string pavarde_;
     public:
-        Zmogus(string var="", string pav="") : vardas_{var}, pavarde_{pav} {std:: cout << "Zmogaus konstruktorius \n";} // default konstruktorius
+        Zmogus(string var="", string pav="") : vardas_{var}, pavarde_{pav} {} // default konstruktorius
+        //std:: cout << "Zmogaus konstruktorius \n"; --> isimta is skliaustu
         void setVardas(string var) { vardas_ = var; }
         void setPavarde(string pav) { pavarde_ = pav; }
         virtual string vardas() const { return vardas_; }
