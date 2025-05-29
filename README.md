@@ -12,6 +12,12 @@
 | 10 000 000  | 0.09455          | 25             | 0.05895         | 25             |
 | 100 000 000 | 0.91979          | 28             | 0.58308         | 28             |
 
+### `std::vector` ir `Vector` Spartos Palyginimas (studentų programos veikimas)
+| Dydis       | std::vector (s) laikas | Vector (s) laikas       |
+|-------------|------------------|----------------|
+| 100000      | 5.96429          | 6.15855             |
+| 1000000     | 63.00443          | 69.96432             | 
+| 10000000    |  713.36633    |       897.70489
 
 ## v2.0: dokumentacija ir Unit testavimas
 
