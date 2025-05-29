@@ -1,0 +1,63 @@
+\doxysection{antrastes.\+h}
+\hypertarget{antrastes_8h_source}{}\label{antrastes_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ANTRASTES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ANTRASTES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}strukt\_antr.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Vector\_new.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <algorithm>}\ \textcolor{comment}{//\ kad\ veiktu\ sort}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <ctime>}\ \textcolor{comment}{//rand}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <chrono>}\ \textcolor{comment}{//laiko\ skaiciavimui}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <numeric>}\ \textcolor{comment}{//accumulate}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <iterator>}\ \textcolor{comment}{//istream\_iterator}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//using\ std::vector;}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ vartotojo\_pasirinkimas(\textcolor{keywordtype}{int}\ \&nr\_meniu,\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{bool}\ ar\_beda(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ pr,\ \textcolor{keywordtype}{int}\ pb);}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{bool}\ ar\_beda\_bendras(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ pr,\ \textcolor{keywordtype}{int}\ pb);}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{int}\ rand\_pazymys();}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ failo\_generavimas(\textcolor{keywordtype}{string}\ failo\_pavadinimas,\ \textcolor{keywordtype}{int}\ nr\_failo\_dydis,\ \textcolor{keywordtype}{int}\ paz\_kiekis);}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{int}\ mediana\_skaiciavimas(Vector\ <int>\ \&pazymiai,\ \mbox{\hyperlink{classstudentai}{studentai}}\ \&temp);}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{string}\ vardo\_generavimas();}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{string}\ pavardes\_generavimas();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ spausdinimas(\mbox{\hyperlink{class_vector}{Vector<studentai>}}\ grupe);}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ spausdinimas\_faile(Vector\ <studentai>\ grupe,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ outputo\_pavadinimas);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ rikiavimas(\textcolor{keywordtype}{int}\ nr\_rikiavimas,\ \mbox{\hyperlink{class_vector}{Vector<studentai>}}\ \&grupe);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ spausdinimo\_parinkimas(\mbox{\hyperlink{class_vector}{Vector<studentai>}}\ grupe,\ \textcolor{keywordtype}{int}\ nr\_spausdinimas,\ \textcolor{keywordtype}{int}\ nr\_rikiavimas);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ sumos\_skaiciavimas(Vector\ <int>\ \&pazymiai,\ \mbox{\hyperlink{classstudentai}{studentai}}\ \&temp);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{double}\ vidurkio\_skaiciavimas(Vector\ <int>\ \&pazymiai,\ \mbox{\hyperlink{classstudentai}{studentai}}\ \&temp);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{double}\ galutinis\_vid\_sk(\mbox{\hyperlink{classstudentai}{studentai}}\ \&temp,\ \textcolor{keywordtype}{double}\ \&vidurkis);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{double}\ galutinis\_med\_sk(\mbox{\hyperlink{classstudentai}{studentai}}\ \&temp,\ \textcolor{keywordtype}{int}\ \&mediana);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00046\ \textcolor{comment}{template\ <typename\ Container>}}
+\DoxyCodeLine{00047\ \textcolor{comment}{void\ spausdinimas\_faile(const\ Container\&\ grupe,\ const\ std::string\&\ outputo\_pavadinimas);}}
+\DoxyCodeLine{00048\ \textcolor{comment}{template\ <typename\ Container>}}
+\DoxyCodeLine{00049\ \textcolor{comment}{void\ nuskaitymas(const\ std::string\&\ failo\_pavadinimas,\ Container\&\ grupe,\ int\ \&n);}}
+\DoxyCodeLine{00050\ \textcolor{comment}{template\ <typename\ Container>}}
+\DoxyCodeLine{00051\ \textcolor{comment}{void\ skaiciavimas(Container\&\ grupe,\ int\ n);}}
+\DoxyCodeLine{00052\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ nuskaitymas(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ failo\_pavadinimas,\ \mbox{\hyperlink{class_vector}{Vector<studentai>}}\&\ grupe,\ \textcolor{keywordtype}{int}\ \&n);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ skaiciavimas(\mbox{\hyperlink{class_vector}{Vector<studentai>}}\&\ grupe,\ \textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ANTRASTES\_H}}
+
+\end{DoxyCode}

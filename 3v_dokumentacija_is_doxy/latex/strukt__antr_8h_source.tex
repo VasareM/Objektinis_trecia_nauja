@@ -1,0 +1,218 @@
+\doxysection{strukt\+\_\+antr.\+h}
+\hypertarget{strukt__antr_8h_source}{}\label{strukt__antr_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ strukt\_antr\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ strukt\_antr\_h}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Vector\_new.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//using\ std::vector;}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }Zmogus}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ vardas\_;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ pavarde\_;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Zmogus(\textcolor{keywordtype}{string}\ var=\textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{string}\ pav=\textcolor{stringliteral}{"{}"{}})\ :\ vardas\_\{var\},\ pavarde\_\{pav\}\ \{\}\ \textcolor{comment}{//\ default\ konstruktorius}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::\ cout\ <<\ "{}Zmogaus\ konstruktorius\ \(\backslash\)n"{};\ -\/-\/>\ isimta\ is\ skliaustu}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setVardas(\textcolor{keywordtype}{string}\ var)\ \{\ vardas\_\ =\ var;\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setPavarde(\textcolor{keywordtype}{string}\ pav)\ \{\ pavarde\_\ =\ pav;\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ vardas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ vardas\_;\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ pavarde()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pavarde\_;\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//copy\ konstr}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Zmogus(\textcolor{keyword}{const}\ Zmogus\&\ other)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ :\ vardas\_(other.vardas\_),\ pavarde\_(other.pavarde\_)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ konstr}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Zmogus(Zmogus\&\&\ other)\ noexcept}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ :\ vardas\_(std::move(other.vardas\_)),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ pavarde\_(std::move(other.pavarde\_))\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ source\ object}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ other.vardas\_\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ other.pavarde\_\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ displayInfo()\ \textcolor{keyword}{const}\ =\ 0;\ \textcolor{comment}{//\ virtual\ =\ abstract\ class}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Zmogus()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ vardas\_.clear();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ pavarde\_.clear();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Destruktorius\ Zmogus\ įvykdytas"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ \textcolor{comment}{//isvestine\ klase}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }studentai:\ \textcolor{keyword}{public}\ Zmogus}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ egzam\_;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Vector\ <double>\ pazymiai\_;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ suma\_=0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vidurkis\_=0;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mediana\_=0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gal\_med\_\ =\ 0,\ gal\_vid\_=0;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setVardas(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ vardas)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::setVardas(vardas);\ \textcolor{comment}{//\ Optionally\ call\ the\ base\ class\ method}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setPavarde(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ pavarde)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::setPavarde(pavarde);\ \textcolor{comment}{//\ Optionally\ call\ the\ base\ class\ method}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//konstruktoriai:}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ studentai()\ :\ Zmogus(),\ egzam\_(0)\ \{\}\ \textcolor{comment}{//\ default\ konstruktorius}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ studentai(std::istream\&\ is);\ \ \textcolor{comment}{//dis:\ konstruktorius,\ realiai\ inicializacijai}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ studentai(\textcolor{keyword}{const}\ studentai\&\ v);\ \textcolor{comment}{//copy\ konstruktorius}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ studentai(studentai\&\&\ v)\ \textcolor{keyword}{noexcept};\ \textcolor{comment}{//move\ konstruktorius}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//studentai(std::initializer\_list<double>\ il);\ //\ perduodamas\ double\ sarasas}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//kas\ cia?}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ studentai\&\ operator=(\textcolor{keyword}{const}\ studentai\&\ v);\ \textcolor{comment}{//\ priskyrimo\ kopijavimo\ operatorius}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ studentai\&\ operator=(studentai\&\&\ v)\ \textcolor{keyword}{noexcept};\ \textcolor{comment}{//\ priskyrimo\ move\ operatorius}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Zmogus::vardas;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Zmogus::pavarde;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ displayInfo()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Studentas:\ "{}}\ <<\ vardas\_\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ pavarde\_\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ }}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//get'eriai}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//string\ vardas()\ const\ \{return\ vardas\_;\}}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//string\ pavarde()\ const\ \{return\ pavarde\_;\}}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ egzam()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ egzam\_;\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector}{Vector<double>}}\&\ pazymiai()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pazymiai\_;\ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ suma()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ suma\_;\}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vidurkis()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mediana()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gal\_med()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gal\_vid()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::istream\&\ readStudent(std::istream\&);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set'eriai}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEgzam(\textcolor{keywordtype}{double}\ egzam)\ \{egzam\_\ =\ egzam;\}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setPazymiai(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector}{Vector<double>}}\&\ pazymiai)\ \{pazymiai\_\ =\ pazymiai;\}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setSuma(\textcolor{keywordtype}{double}\ suma)\ \{suma\_\ =\ suma;\}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setVidurkis(\textcolor{keywordtype}{double}\ vidurkis)\ \{vidurkis\_\ =\ vidurkis;\}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setMediana(\textcolor{keywordtype}{int}\ mediana)\ \{mediana\_\ =\ mediana;\}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setGalMed(\textcolor{keywordtype}{double}\ gal\_med)\ \{gal\_med\_\ =\ gal\_med;\}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setGalVid(\textcolor{keywordtype}{double}\ gal\_vid)\ \{gal\_vid\_\ =\ gal\_vid;\}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addPazymys(\textcolor{keywordtype}{double}\ pazymys)\ \{pazymiai\_.push\_back(pazymys);\}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//perdengti\ operatoriai}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ i/o\ operatoriai\ friend\ tipo}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ operator>>(std::istream\&\ is,\ studentai\&\ v);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ studentai\&\ v);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//destruktorius:}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \string~studentai()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai\_.clear();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Destruktorius\ išvestinės\ studentai\ įvykdytas"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//override\ -\/\ virtualus\ išvestinės\ destruktorius}}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00125\ \textcolor{comment}{class\ studentai}}
+\DoxyCodeLine{00126\ \textcolor{comment}{\{}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ \ \ private:}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ \ \ \ \ \ string\ vardas\_;}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ \ \ \ \ \ string\ pavarde\_;}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ egzam\_;}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ \ \ \ \ \ \ Vector\ <double>\ pazymiai\_;}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ suma\_=0;}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ vidurkis\_=0;}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ \ \ \ \ \ int\ mediana\_=0;}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ gal\_med\_\ =\ 0,\ gal\_vid\_=0;}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ \ \ \ public:}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ \ \ \ \ \ \ \ //konstruktoriai:}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ \ \ \ \ \ \ \ studentai()\ :\ egzam\_(0)\ \{\}\ //\ default\ konstruktorius}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ \ \ \ \ \ \ \ studentai(std::istream\&\ is);\ \ //dis:\ konstruktorius,\ realiai\ inicializacijai}}
+\DoxyCodeLine{00140\ \textcolor{comment}{}}
+\DoxyCodeLine{00141\ \textcolor{comment}{\ \ \ \ \ \ \ \ studentai(const\ studentai\&\ v);\ //copy\ konstruktorius}}
+\DoxyCodeLine{00142\ \textcolor{comment}{\ \ \ \ \ \ \ \ studentai(studentai\&\&\ v)\ noexcept;\ //move\ konstruktorius}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\ \ \ \ \ \ \ \ studentai(std::initializer\_list<double>\ il);\ //\ perduodamas\ double\ sarasas}}
+\DoxyCodeLine{00144\ \textcolor{comment}{\ \ \ \ \ \ \ \ //kas\ cia?}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ \ \ \ \ studentai\&\ operator=(const\ studentai\&\ v);\ //\ priskyrimo\ kopijavimo\ operatorius}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ \ \ \ \ \ \ \ studentai\&\ operator=(studentai\&\&\ v)\ noexcept;\ //\ priskyrimo\ move\ operatorius}}
+\DoxyCodeLine{00147\ \textcolor{comment}{}}
+\DoxyCodeLine{00148\ \textcolor{comment}{}}
+\DoxyCodeLine{00149\ \textcolor{comment}{\ \ \ \ \ \ \ \ //get'eriai,\ inline:}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ \ \ \ \ \ \ \ inline\ string\ vardas()\ const\ \{return\ vardas\_;\}}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ \ \ \ \ \ \ inline\ string\ pavarde()\ const\ \{return\ pavarde\_;\}}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ \ \ \ \ inline\ double\ egzam()\ const\ \{\ return\ egzam\_;\ \}}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ \ \ \ \ inline\ const\ Vector<double>\&\ pazymiai()\ const\ \{\ return\ pazymiai\_;\ \}}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ \ \ \ \ \ \ inline\ double\ suma()\ const\ \{return\ suma\_;\}}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ \ \ \ \ \ inline\ double\ vidurkis()\ const;}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ \ \ \ \ inline\ int\ mediana()\ const;}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ gal\_med()\ const;}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ \ \ \ \ \ \ double\ gal\_vid()\ const;}}
+\DoxyCodeLine{00159\ \textcolor{comment}{}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ \ \ \ \ \ \ \ //set'eriai:}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::istream\&\ readStudent(std::istream\&);\ //set'eriai}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setVardas(string\ vardas)\ \{vardas\_\ =\ vardas;\}}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setPavarde(string\ pavarde)\ \{pavarde\_\ =\ pavarde;\}}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setEgzam(double\ egzam)\ \{egzam\_\ =\ egzam;\}}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setPazymiai(const\ Vector<double>\&\ pazymiai)\ \{pazymiai\_\ =\ pazymiai;\}}}
+\DoxyCodeLine{00166\ \textcolor{comment}{\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setSuma(double\ suma)\ \{suma\_\ =\ suma;\}}}
+\DoxyCodeLine{00168\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setVidurkis(double\ vidurkis)\ \{vidurkis\_\ =\ vidurkis;\}}}
+\DoxyCodeLine{00169\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setMediana(int\ mediana)\ \{mediana\_\ =\ mediana;\}}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setGalMed(double\ gal\_med)\ \{gal\_med\_\ =\ gal\_med;\}}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setGalVid(double\ gal\_vid)\ \{gal\_vid\_\ =\ gal\_vid;\}}}
+\DoxyCodeLine{00172\ \textcolor{comment}{}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ addPazymys(double\ pazymys)\ \{pazymiai\_.push\_back(pazymys);\}}}
+\DoxyCodeLine{00174\ \textcolor{comment}{}}
+\DoxyCodeLine{00175\ \textcolor{comment}{}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ \ \ \ \ \ \ \ //perdengti\ operatoriai}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ \ \ \ \ \ \ \ //\ \ i/o\ operatoriai\ friend\ tipo}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ \ \ \ \ \ \ \ friend\ std::istream\&\ operator>>(std::istream\&\ is,\ studentai\&\ v);}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ \ \ \ \ \ \ \ friend\ std::ostream\&\ operator<<(std::ostream\&\ os,\ const\ studentai\&\ v);}}
+\DoxyCodeLine{00180\ \textcolor{comment}{}}
+\DoxyCodeLine{00181\ \textcolor{comment}{}}
+\DoxyCodeLine{00182\ \textcolor{comment}{\ \ \ \ \ \ \ \ //destruktorius:}}
+\DoxyCodeLine{00183\ \textcolor{comment}{\ \ \ \ \ \ \ \ \string~studentai()\ \{}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ pazymiai\_.clear();}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ vardas\_.clear();}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ pavarde\_.clear();}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ "{}Destruktorius\ įvykdytas"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00189\ \textcolor{comment}{\};}}
+\DoxyCodeLine{00190\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{comment}{//bool\ compare(const\ studentai\&,\ const\ studentai\&);}}
+\DoxyCodeLine{00194\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00195\ \textcolor{comment}{bool\ comparePagalPavarde(const\ studentai\&,\ const\ studentai\&);}}
+\DoxyCodeLine{00196\ \textcolor{comment}{bool\ comparePagalEgza(const\ studentai\&,\ const\ studentai\&);}}
+\DoxyCodeLine{00197\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00200\ \textcolor{comment}{struct\ studentai}}
+\DoxyCodeLine{00201\ \textcolor{comment}{\{}}
+\DoxyCodeLine{00202\ \textcolor{comment}{\ \ \ \ string\ vardas="{}var"{};\ //default\ reiksmes\ testavimui}}
+\DoxyCodeLine{00203\ \textcolor{comment}{\ \ \ \ string\ pavarde="{}pav"{};}}
+\DoxyCodeLine{00204\ \textcolor{comment}{\ \ \ \ Vector<int>\ pazymiai;\ //nd\ tarpiniai\ rezultatai}}
+\DoxyCodeLine{00205\ \textcolor{comment}{\ \ \ \ int\ egzam;}}
+\DoxyCodeLine{00206\ \textcolor{comment}{\ \ \ \ double\ suma=0;}}
+\DoxyCodeLine{00207\ \textcolor{comment}{\ \ \ \ double\ vidurkis;}}
+\DoxyCodeLine{00208\ \textcolor{comment}{\ \ \ \ int\ mediana;}}
+\DoxyCodeLine{00209\ \textcolor{comment}{\ \ \ \ double\ gal\_vid,\ gal\_med;}}
+\DoxyCodeLine{00210\ \textcolor{comment}{\};}}
+\DoxyCodeLine{00211\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
