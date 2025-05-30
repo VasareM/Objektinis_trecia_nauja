@@ -262,6 +262,54 @@ TEST_CASE("get_allocator() testas")
     alloc.destroy(p);
     alloc.deallocate(p, 1);
 }
+TEST_CASE("Copy constructor for Vector") {
+    Vector<int> v1{1, 2, 3, 4};
+    Vector<int> v2 = v1; // copy constructor
+    REQUIRE(v2.size() == v1.size());
+    for (size_t i = 0; i < v1.size(); ++i) {
+        REQUIRE(v2[i] == v1[i]);
+    }
+    // Changing v2 does not affect v1
+    v2[0] = 100;
+    REQUIRE(v1[0] == 1);
+    REQUIRE(v2[0] == 100);
+}
+
+TEST_CASE("Move constructor for Vector") {
+    Vector<int> v1{10, 20, 30};
+    Vector<int> v2 = std::move(v1); // move constructor
+    REQUIRE(v2.size() == 3);
+    REQUIRE(v2[0] == 10);
+    REQUIRE(v2[1] == 20);
+    REQUIRE(v2[2] == 30);
+    REQUIRE(v1.size() == 0); // v1 should be empty after move
+}
+
+TEST_CASE("Copy assignment for Vector") {
+    Vector<int> v1{5, 6, 7};
+    Vector<int> v2;
+    v2 = v1; // copy assignment
+    REQUIRE(v2.size() == v1.size());
+    for (size_t i = 0; i < v1.size(); ++i) {
+        REQUIRE(v2[i] == v1[i]);
+    }
+    // Changing v2 does not affect v1
+    v2[1] = 99;
+    REQUIRE(v1[1] == 6);
+    REQUIRE(v2[1] == 99);
+}
+
+TEST_CASE("Move assignment for Vector") {
+    Vector<int> v1{11, 22, 33};
+    Vector<int> v2;
+    v2 = std::move(v1); // move assignment
+    REQUIRE(v2.size() == 3);
+    REQUIRE(v2[0] == 11);
+    REQUIRE(v2[1] == 22);
+    REQUIRE(v2[2] == 33);
+    REQUIRE(v1.size() == 0); // v1 should be empty after move
+}
+
 /*
 TEST_CASE("")
 {

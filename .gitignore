@@ -43,3 +43,11 @@ sukurtas_studentai1000000.txt
 sukurtas_studentai10000000.txt
 nelaimingi.txt
 galvociai.txt
+
+# Ignore Visual Studio and related IDE folders
+# .vs/
+# .vscode/
+# *.vsidx
+
+# Ignore everything in Bandymas ir setup folder
+/Bandymas ir setup/

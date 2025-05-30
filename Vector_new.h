@@ -29,10 +29,12 @@ public:
     Vector(size_type);
     Vector(size_type, value_type);
     Vector(std::initializer_list<value_type>);
-    Vector(const Vector<T>& other); 
+    Vector(const Vector<T>& other);  // copy constructor
+    Vector(Vector<T>&& other) noexcept; // move constructor
     ~Vector();
 
-    Vector& operator=(const Vector&);
+    Vector& operator=(const Vector&); // copy assignment
+    Vector& operator=(Vector&& other) noexcept; // move assignment
 
     reference at(size_type);
     reference operator[](size_type);
@@ -115,30 +117,60 @@ Vector<T>::Vector(const Vector<T>& other)
 }
 
 template <typename T>
+Vector<T>::Vector(Vector<T>&& other) noexcept
+    : _data(other._data), _size(other._size), _capacity(other._capacity) {
+    other._data = nullptr;
+    other._size = 0;
+    other._capacity = 0;
+}
+
+template <typename T>
 Vector<T>::~Vector() {
     delete[] _data;
+    // taisyta
+    _data = nullptr;
+    _size = 0;
+    _capacity = 0;
 }
 
 template <typename T>
 Vector<T>& Vector<T>::operator=(const Vector& other) {
-    if (this == &other) return *this;
-    delete[] _data;
-    _data = new value_type[other._capacity];
-    _size = other._size;
-    _capacity = other._capacity;
-    std::copy(other._data, other._data + _size, _data);
+    if (this != &other) {
+        delete[] _data;
+        _data = new value_type[other._capacity];
+        _size = other._size;
+        _capacity = other._capacity;
+        std::copy(other._data, other._data + _size, _data);
+    }
+    return *this;
+}
+
+template <typename T>
+Vector<T>& Vector<T>::operator=(Vector&& other) noexcept {
+    if (this != &other) {
+        delete[] _data;
+        _data = other._data;
+        _size = other._size;
+        _capacity = other._capacity;
+        other._data = nullptr;
+        other._size = 0;
+        other._capacity = 0;
+    }
     return *this;
 }
 
 template <typename T>
 typename Vector<T>::reference Vector<T>::at(size_type pos) {
-    if (pos >= _size) throw std::out_of_range("Index out of range");
+    if (pos >= _size && pos>=0) throw std::out_of_range("Index out of range");
     return _data[pos];
+    // neneigiamas
 }
 
 template <typename T>
 typename Vector<T>::reference Vector<T>::operator[](size_type pos) {
-    return _data[pos];
+    // return _data[pos];
+    // panaudot anksčiau realizuotą
+    return at(pos);
 }
 
 template <typename T>
@@ -198,7 +230,11 @@ void Vector<T>::resize(size_type new_size, value_type val) {
 
 template <typename T>
 void Vector<T>::clear() {
+    // viską valo
+    delete[] _data;
+    _data = nullptr;
     _size = 0;
+    _capacity = 0;
 }
 
 template <typename T>

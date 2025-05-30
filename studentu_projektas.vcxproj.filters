@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="funkcijos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kodas_vektoriai.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="programos_veikimo_laiko_analize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spartos_analize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="versijos_testavimas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bandymas ir setup\bandymas\Bandymas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\cmakefiles\4.0.0-rc4\compileridc\CMakeCCompilerId.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\cmakefiles\4.0.0-rc4\compileridcxx\CMakeCXXCompilerId.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testavimas_unit\testai_Vectoriui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testavimas_unit\testavimo_testai.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="antrastes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="strukt_antr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector_new.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testavimas_unit\catch.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build\cmakefiles\4.0.0-rc4\CMakeDetermineCompilerABI_C.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="build\cmakefiles\4.0.0-rc4\CMakeDetermineCompilerABI_CXX.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="3v_dokumentacija_is_doxy\html\annotated.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\antrastes_8h_source.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\catch_8hpp_source.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\classes.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\classstudentai-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\classstudentai.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_approx-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_approx.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_assertion_handler-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_assertion_handler.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_binary_expr-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_binary_expr.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_capturer-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_capturer.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_detail_1_1_approx-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_detail_1_1_approx.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_detail_1_1_is_stream_insertable-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_detail_1_1_is_stream_insertable.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_exception_translator_registrar-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_exception_translator_registrar.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_expr_lhs-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_expr_lhs.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_chunk_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_chunk_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_filter_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_filter_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_fixed_values_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_fixed_values_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_generators-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_generators.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_generator_untyped_base-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_generator_untyped_base.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_generator_wrapper-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_generator_wrapper.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_iterator_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_iterator_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_map_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_map_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_random_floating_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_random_floating_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_random_integer_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_random_integer_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_range_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_range_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_repeat_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_repeat_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_single_value_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_single_value_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_take_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generators_1_1_take_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generator_exception-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_generator_exception.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_lazy_expression-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_lazy_expression.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_match_expr-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_match_expr.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_non_copyable-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_non_copyable.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_option-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_option.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_reusable_string_stream-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_reusable_string_stream.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_scoped_message-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_scoped_message.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_section-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_section.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_simple_pcg32-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_simple_pcg32.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_string_ref-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_string_ref.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_test_case-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_test_case.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_test_invoker_as_method-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_test_invoker_as_method.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_timer-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_timer.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_unary_expr-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_catch_1_1_unary_expr.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_vector-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_vector.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_zmogus-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\class_zmogus.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\dir_11d2a7cc5313334b4ad92fbdb480c55d.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\dir_4fef79e7177ba769987a8da36c892c5f.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\dir_63772b626f2709090f0bdca0f40827b4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\dir_ad0621a1eb1d28883fef51a8253568fe.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\dir_cb5e7089658397c1934729acbc4488ca.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\dir_fd408217f95d3f1da988aefb624fd514.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\doxygen_crawl.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\files.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\hierarchy.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\index.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\md__r_e_a_d_m_e.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\pages.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1always__false.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1detail_1_1is__range__impl.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1detail_1_1void__type-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1detail_1_1void__type.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1is__callable.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1is__callable_3_01_fun_07_args_8_8_8_08_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1is__callable__tester-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1is__callable__tester.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1is__range.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1pluralise-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1pluralise.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1true__given.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_assertion_info-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_assertion_info.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_assertion_reaction-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_assertion_reaction.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_auto_reg-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_auto_reg.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_case_sensitive-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_case_sensitive.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_counts-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_counts.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_decomposer-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_decomposer.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_detail_1_1_enum_info-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_detail_1_1_enum_info.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_generators_1_1as.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_generators_1_1_i_generator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_generators_1_1_i_generator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_config-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_config.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_context-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_context.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_exception_translator-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_exception_translator.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_exception_translator_registry-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_exception_translator_registry.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_generator_tracker-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_generator_tracker.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_mutable_context-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_mutable_context.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_mutable_enum_values_registry-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_mutable_enum_values_registry.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_mutable_registry_hub-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_mutable_registry_hub.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_registry_hub-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_registry_hub.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_result_capture-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_result_capture.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_runner-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_runner.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_stream-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_stream.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_test_case_registry-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_test_case_registry.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_test_invoker-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_test_invoker.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_transient_expression-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_i_transient_expression.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_cased_string-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_cased_string.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matcher_base-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_matcher_base.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_message_builder-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_message_builder.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_message_info-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_message_info.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_message_stream-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_message_stream.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_name_and_tags-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_name_and_tags.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_registrar_for_tag_aliases-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_registrar_for_tag_aliases.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_result_disposition-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_result_disposition.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_result_was-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_result_was.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_run_tests-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_run_tests.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_section_end_info-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_section_end_info.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_section_info-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_section_info.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_show_durations-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_show_durations.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_source_line_info-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_source_line_info.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_stream_end_stop-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_stream_end_stop.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01bool_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01bool_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_01const_01_5_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_01const_01_5_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_01_5_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_01_5_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_0f_s_z_0e_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01char_0f_s_z_0e_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01double_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01double_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01float_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01float_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01int_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01int_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01long_01long_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01long_01long_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01long_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01long_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01signed_01char_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01signed_01char_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01signed_01char_0f_s_z_0e_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01signed_01char_0f_s_z_0e_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01std_1_1nullptr__t_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01std_1_1nullptr__t_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01std_1_1string_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01std_1_1string_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01std_1_1wstring_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01std_1_1wstring_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01char_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01char_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01char_0f_s_z_0e_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01char_0f_s_z_0e_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01int_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01int_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01long_01long_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01long_01long_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01long_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01unsigned_01long_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01wchar__t_01const_01_5_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01wchar__t_01const_01_5_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01wchar__t_01_5_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01wchar__t_01_5_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_catch_1_1_detail_1_1_approx_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_catch_1_1_detail_1_1_approx_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_r_00_01typename_01std_1_1enable__if_3_01is__range_3_01_r_01_4536d8fedfff6d62432b3dc59b56e1380.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_r_00_01typename_01std_1_1enable__if_3_01is__range_3_01_r_01_4b2659549e0e87f27cdabec6f94fde16d.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_r_01_c_1_1_5_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_r_01_c_1_1_5_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_t_01_5_01_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_t_01_5_01_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_t_0f_s_z_0e_4-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_string_maker_3_01_t_0f_s_z_0e_4.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_test_case_info-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_test_case_info.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_test_failure_exception.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_totals-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_totals.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_use_colour-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_use_colour.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_wait_for_keypress-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_wait_for_keypress.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_warn_about-members.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch_1_1_warn_about.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\struct_catch__global__namespace__dummy.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\strukt__antr_8h_source.html" />
+    <None Include="3v_dokumentacija_is_doxy\html\_vector__new_8h_source.html" />
+    <None Include="documentacija\html\annotated.html" />
+    <None Include="documentacija\html\antrastes_8h_source.html" />
+    <None Include="documentacija\html\classes.html" />
+    <None Include="documentacija\html\classstudentai-members.html" />
+    <None Include="documentacija\html\classstudentai.html" />
+    <None Include="documentacija\html\class_zmogus-members.html" />
+    <None Include="documentacija\html\class_zmogus.html" />
+    <None Include="documentacija\html\doxygen_crawl.html" />
+    <None Include="documentacija\html\files.html" />
+    <None Include="documentacija\html\hierarchy.html" />
+    <None Include="documentacija\html\index.html" />
+    <None Include="documentacija\html\md__r_e_a_d_m_e.html" />
+    <None Include="documentacija\html\pages.html" />
+    <None Include="documentacija\html\strukt__antr_8h_source.html" />
+    <None Include="dokumentacija\html\annotated.html" />
+    <None Include="dokumentacija\html\antrastes_8h_source.html" />
+    <None Include="dokumentacija\html\classes.html" />
+    <None Include="dokumentacija\html\classstudentai-members.html" />
+    <None Include="dokumentacija\html\classstudentai.html" />
+    <None Include="dokumentacija\html\class_zmogus-members.html" />
+    <None Include="dokumentacija\html\class_zmogus.html" />
+    <None Include="dokumentacija\html\doxygen_crawl.html" />
+    <None Include="dokumentacija\html\files.html" />
+    <None Include="dokumentacija\html\hierarchy.html" />
+    <None Include="dokumentacija\html\index.html" />
+    <None Include="dokumentacija\html\md__r_e_a_d_m_e.html" />
+    <None Include="dokumentacija\html\pages.html" />
+    <None Include="dokumentacija\html\strukt__antr_8h_source.html" />
+    <None Include="dokumentacija_oficialiai_v3.0\index.html" />
+  </ItemGroup>
+</Project>
